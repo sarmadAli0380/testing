@@ -1,0 +1,19 @@
+name : workflowtesting
+
+on: 
+    push:
+     branches: [develop]
+     pull request: 
+     branches: [develop]
+
+     jobs:
+     runs-on: ubuntu-latest
+     steps:
+     -name: welcome step
+     run: echo "welcome To github Actions"
+     -name: checkout repository
+     uses: actions/checkout@v4
+     -name: Repository Basic info 
+     rub: |
+     echo "repository name: ${{github.repository}}"
+     echo "repository name: ${{github.owner}}"
